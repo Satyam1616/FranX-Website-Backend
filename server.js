@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB Connection with better error handling
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/franx_website';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://franx_admin:franx.mongoDB@cluster0.vpnyyed.mongodb.net/franx_website?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
