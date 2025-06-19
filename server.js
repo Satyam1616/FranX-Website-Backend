@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const nodemailer = require('nodemailer');
 
 const app = express();
 
@@ -162,4 +163,12 @@ app.listen(PORT, () => {
   console.log(`- GET  /api/contacts`);
   console.log(`- POST /api/reviews`);
   console.log(`- GET  /api/reviews`);
+});
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
 }); 
